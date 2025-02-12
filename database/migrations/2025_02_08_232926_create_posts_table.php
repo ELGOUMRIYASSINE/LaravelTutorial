@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 250) ; // varchar
             $table->text('description'); // text
+            $table->string('post_creator'); // text
             $table->timestamps();
         });
     }

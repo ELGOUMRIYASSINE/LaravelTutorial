@@ -10,8 +10,8 @@
         Post Info
     </div>
     <div class="card-body">
-        <h5 class="card-title">PHP</h5>
-        <p class="card-text">Description : php is cool language </p>
+        <h5 class="card-title">{{ $post->title }}</h5>
+        <p class="card-text">Description : {{ $post->description }} </p>
     </div>
     </div>
 
@@ -21,9 +21,10 @@
         Post Creator Info
     </div>
     <div class="card-body">
-        <h5 class="card-title">Name: Ahmed</h5>
-        <p class="card-text">Email : yassine@gmail.com</p>
-        <p class="card-text">Created At : 10/02/2024 </p>
+        {{-- @dd($post->user) --}}
+        <h5 class="card-title">Name: {{ $post->user->name }}</h5>
+        <p class="card-text">Email : {{ $post->user->email }}</p>
+        <p class="card-text">Created At : {{ $post->user->created_at }} </p>
     </div>
 </div>
 @endsection

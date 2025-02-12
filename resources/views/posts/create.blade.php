@@ -19,8 +19,9 @@
             <label for="exampleFormControlInput1" class="form-label">Post Creator</label>
             <select class="form-select" aria-label="Default select example" name="post_creator">
                 <option selected>Open this select menu</option>
-                <option value="yassine">Yassine</option>
-                <option value="zouhaire">Zouhaire</option>
+                @foreach($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endforeach
             </select>
         </div>
 
