@@ -55,6 +55,12 @@ class PostController extends Controller
 
     public function store(){
 
+        $validated = request()->validate([
+            'title' => ['required','min:3'],
+            'description' => ['required','min:5'],
+            'post_creator' => ['required','exists:users,id'],
+        ]);
+
 
         // way 1
         // Post::insert(
@@ -94,6 +100,12 @@ class PostController extends Controller
     }
 
     public function update(Post $post){
+
+        $validated = request()->validate([
+            'title' => ['required','min:3'],
+            'description' => ['required','min:5'],
+            'title' => ['required','exists:users,id'],
+        ]);
 
         // way 1 :
 
