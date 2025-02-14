@@ -17,12 +17,12 @@
     {{-- html form katfham ghire post ou get hna 3tinaha temchi b post ou zedna had method bach put route y9bel lina had request --}}
         <div class="mb-3" >
             <label  class="form-label">Title</label>
-            <input type="text" class="form-control" value="{{ $post->title }}" name="title" >
+            <input type="text" class="form-control" value="{{ old('title',$post->title)}}" name="title" >
         </div>
 
         <div class="mb-3" >
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" name="description"  rows="3">{{ $post->description }}</textarea>
+            <textarea class="form-control" name="description"  rows="3">{{ old('description',$post->description)}}</textarea>
         </div>
 
 
